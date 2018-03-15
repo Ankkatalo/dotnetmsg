@@ -9,6 +9,7 @@ Note that the assembly is x86 or x64 and cannot be AnyCPU.
 
 Visual Studio 2017 or later is expected
 .NET 4.5 or later is required
+nanomsg/nng already built as a static library, minimum version is 0.6.0.
 
 === Building
 
