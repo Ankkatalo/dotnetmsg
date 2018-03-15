@@ -1,0 +1,13 @@
+The Dispose Pattern in C++/CLI
+
+Disposing of data is not really a problem in C++, as it destroys objects as they go out of scope. But we want to use the Assembly from C#.
+
+You cannot implement a member called "Dispose" in C++/CLI. It is created automatically. And the automatically
+generated method "Dispose" calls the destructor.
+
+The C++/CLI destructor will also contain automatically added code to execute SuppressFinalize().
+
+As the Nng library contains a lot of things that should be stopped deterministically, I chose not to implement
+a finalizer.
+
+

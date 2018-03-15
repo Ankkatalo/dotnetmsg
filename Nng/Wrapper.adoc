@@ -1,0 +1,26 @@
+&#46;NET wrapper
+----------------
+
+The .NET wapper is an assembly written in C++/CLI, linked with the static nng library, to be used from any .NET language.
+In order to use it, create a reference from your project to the assembly file nng.dll, or use Add-Type in Powershell.
+Note that the assembly is x86 or x64 and cannot be AnyCPU.
+
+=== Requirements
+
+Visual Studio 2017 or later is expected
+.NET 4.5 or later is required
+
+=== Intellisense problem
+
+Even if the assembly is generated with xml documentation, a bug prevents the direct usage. The problem is that C++/CLI thinks
+that an int? is written as __System.Nullable`1{int}__ but C# insists that the syntax is __System.Nullable{int}__.
+You can work around the bug by removing all __`1__ sequences after creating the xml documentation file.
+
+=== Completeness
+
+The wrapper is not complete: many options and the https functions have not been written yet.
+
+=== What works and is definitely tested
+
+The ipc, inproc and plain tcp transports have been tried. We also have a few automated test cases.
+
