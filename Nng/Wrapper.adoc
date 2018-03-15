@@ -10,6 +10,12 @@ Note that the assembly is x86 or x64 and cannot be AnyCPU.
 Visual Studio 2017 or later is expected
 .NET 4.5 or later is required
 
+=== Building
+
+Load the supplied solution, select x64/debug or x64/release. Fix the C include path so that nng header will be found.
+The fix the linker search path to include the nng_static.lib.
+Build both projects and run the tests.
+
 === Intellisense problem
 
 Even if the assembly is generated with xml documentation, a bug prevents the direct usage. The problem is that C++/CLI thinks
@@ -23,4 +29,9 @@ The wrapper is not complete: many options and the https functions have not been 
 === What works and is definitely tested
 
 The ipc, inproc and plain tcp transports have been tried. We also have a few automated test cases.
+You should use the 64 bit version.
 
+=== Automated tests
+
+In order to test the x64 dll, you have to switch the default processor architecture under "Test Settings" to x64.
+There are currently 5 test, they will not show up if you select the wrong architecture

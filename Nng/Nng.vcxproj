@@ -92,12 +92,12 @@
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\joern\source\Repos\nng\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\nng\src;</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>nng_static.lib;ws2_32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\joern\CMakeBuilds\8cdbb36a-3ce0-803f-9ea3-fba9fb9b103b\build\x64-Debug;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\CMakeBuilds\8cdbb36a-3ce0-803f-9ea3-fba9fb9b103b\build\x64-Debug;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -129,12 +129,12 @@
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\SIERJO\source\Repos\nanomsg\nng.git\src;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\nng\src;</AdditionalIncludeDirectories>
       <GenerateXMLDocumentationFiles>true</GenerateXMLDocumentationFiles>
     </ClCompile>
     <Link>
       <AdditionalDependencies>nng_static.lib;ws2_32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\SIERJO\CMakeBuilds\027b75e7-ef8c-833f-93af-2e85dbd22038\build\x64-Debug;</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\CMakeBuilds\8cdbb36a-3ce0-803f-9ea3-fba9fb9b103b\build\x64-Release;</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
