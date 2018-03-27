@@ -62,7 +62,9 @@ namespace Nng {
 
 		/// <summary>Set an option to a binary/blob value</summary>
 		Errno SetOpt(System::String^ optionName, array<System::Byte>^);
-		/// <summary>Set an option to an integer value</summary>
+      /// <summary>Set an option to a bool value</summary>
+      Errno SetOptBool(System::String^ optionName, Boolean);
+      /// <summary>Set an option to an integer value</summary>
 		Errno SetOptInt(System::String^ optionName, int);
 		/// <summary>Set an option to time value, in milliseconds</summary>
 		Errno SetOptMs(System::String^ optionName, Int32);
@@ -75,7 +77,9 @@ namespace Nng {
 		
 		/// <summary>Get an option as a binary/blob value.</summary>
 		Errno GetOpt(System::String^ optionName, [Out] array<System::Byte>^%);
-		/// <summary>Get an option as an integer value.</summary>
+      /// <summary>Get an option as an bool value.</summary>
+      Errno GetOptBool(System::String^ optionName, [Out] Boolean%);
+      /// <summary>Get an option as an integer value.</summary>
 		Errno GetOptInt(System::String^ optionName, [Out] Int32%);
 		/// <summary>Get an option as a time value, in milliseconds.</summary>
 		Errno GetOptMs(System::String^ optionName, [Out] Int32%);

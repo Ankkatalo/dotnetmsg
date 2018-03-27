@@ -76,6 +76,11 @@ namespace Nng {
 		pin_ptr<System::Byte> ip2 = &a[0];
 		return static_cast<Errno>(::nng_setopt(this->NngSocket, (const char*)ip1, (void*)ip2, a->Length));
 	}
+   Errno Socket::SetOptBool(System::String^ str, Boolean b)
+   {
+      DECLARE_CONST_STRING(s, str);
+      return static_cast<Errno>(::nng_setopt_bool(this->NngSocket, s, b));
+   }
 
 	Errno Socket::SetOptInt(System::String^ str, int i) {
 		DECLARE_CONST_STRING(s, str);
@@ -106,6 +111,14 @@ namespace Nng {
 		DECLARE_CONST_STRING(s, str);
 		return Errno::ok;
 	}
+
+   Errno Socket::GetOptBool(System::String^ str, [Out] Boolean% b) {
+      DECLARE_CONST_STRING(s, str);
+      bool b2;
+      int result = ::nng_getopt_bool(this->NngSocket, s, &b2);
+      b = b2;
+      return static_cast<Errno>(result);
+   }
 
 	Errno Socket::GetOptInt(System::String^ str, [Out] Int32% i) {
 		DECLARE_CONST_STRING(s, str);

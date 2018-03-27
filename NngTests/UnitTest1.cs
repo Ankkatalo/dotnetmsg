@@ -211,7 +211,7 @@ namespace NngTests
             Errno errno;
             errno = Protocols.Req0(out req0);
             Assert.IsTrue(errno == Errno.ok);
-            errno = req0.SetOptInt("raw", 1);
+            errno = req0.SetOptBool("raw", true);
             Assert.IsTrue(errno == Errno.ok);
             errno = Dialer.Dial(req0, "ipc:///myfirstpipe12345", out dialer, 0);
             Assert.IsTrue(errno == Errno.ok);
@@ -241,7 +241,7 @@ namespace NngTests
             Errno errno;
             errno = Protocols.Rep0(out rep0);
             Assert.IsTrue(errno == Errno.ok);
-            errno = rep0.SetOptInt("raw", 1);
+            errno = rep0.SetOptBool("raw", true);
             Assert.IsTrue(errno == Errno.ok);
             errno = Listener.Listen(rep0, "ipc:///myfirstpipe12345", out listener, 0);
             Assert.IsTrue(errno == Errno.ok);
